@@ -1,8 +1,17 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Header } from './components/header/header'
+import { TasksPage } from './pages/tasks/tasks-page'
+import { Redirect } from './utils/router/redirect'
+
 function App() {
   return (
-    <div>
-      <h1 className='text-3xl font-bold underline'>Hello world!</h1>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Redirect to='/tasks' />} />
+        <Route path='/tasks' element={<TasksPage />} />
+      </Routes>
+    </Router>
   )
 }
 
