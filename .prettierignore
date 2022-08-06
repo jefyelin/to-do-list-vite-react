@@ -2,3 +2,5 @@ node_modules
 yarn.lock
 .vscode
 .yarn
+tailwind.config.cjs
+postcss.config.cjs
