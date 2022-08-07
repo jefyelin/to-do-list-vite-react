@@ -1,7 +1,7 @@
-import { Task } from '../../../model/task'
-import { TasksCounter } from '../../counter/tasks-counter'
-import { EmphasisLabel } from '../../label/emphasis-label'
-import { TasksInfoContainer } from '../tasks-info-container'
+import { Task } from '../../../../model/task'
+import { EmphasisLabel } from '../../../label/emphasis-label'
+import { TasksCounter } from '../../counter'
+import { ContainerTasksInfo } from '../container-tasks'
 
 interface OpenTasksInfo {
   tasks: Task[]
@@ -10,11 +10,11 @@ interface OpenTasksInfo {
 
 export function OpenTasksInfo({ tasks, id }: OpenTasksInfo) {
   return (
-    <TasksInfoContainer ariaLabelledBy={`label-${id}`}>
+    <ContainerTasksInfo ariaLabelledBy={`label-${id}`}>
       <EmphasisLabel htmlFor={id} id={`label-${id}`} variant='blue'>
         Tarefas criadas
       </EmphasisLabel>
       <TasksCounter id={id} tasks={tasks} variant='total' />
-    </TasksInfoContainer>
+    </ContainerTasksInfo>
   )
 }

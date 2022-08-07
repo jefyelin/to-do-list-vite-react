@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { CreateTaskForm } from '../../components/form/create-task-form'
-import { ConcludedTasksInfo } from '../../components/info/concluded-tasks-info'
-import { OpenTasksInfo } from '../../components/info/open-tasks-info'
+import { CreateTaskForm } from '../../components/tasks/form'
+import { ConcludedTasksInfo } from '../../components/tasks/info/concluded-tasks'
+import { OpenTasksInfo } from '../../components/tasks/info/open-tasks'
 import { Task, TASK_STATUS } from '../../model/task'
 
 export function TasksPage() {
