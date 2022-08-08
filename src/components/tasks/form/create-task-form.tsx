@@ -1,12 +1,18 @@
+import { nanoid } from 'nanoid'
 import { Controller, SubmitHandler, useForm, useFormState } from 'react-hook-form'
-import { CreateButton } from '../../button/create-button'
+import { Task, TASK_STATUS } from '../../../model/task'
+import { CreateButton } from '../../button/create'
 import { InputText } from '../../input/input-text'
 
 type FormInputs = {
   task: string
 }
 
-export function CreateTaskForm() {
+interface CreateTaskFormProps {
+  onCreateTask: (task: Task) => void
+}
+
+export function CreateTaskForm({ onCreateTask }: CreateTaskFormProps) {
   const { control, handleSubmit, resetField } = useForm<FormInputs>({
     defaultValues: {
       task: '',
@@ -16,7 +22,15 @@ export function CreateTaskForm() {
   const { isValid } = useFormState({ control })
 
   const onSubmit: SubmitHandler<FormInputs> = (data: FormInputs) => {
-    console.log(JSON.stringify(data, null, 2))
+    const { task: taskInputValue } = data
+
+    const newTask: Task = {
+      description: taskInputValue,
+      id: nanoid(),
+      status: TASK_STATUS.OPEN,
+    }
+
+    onCreateTask(newTask)
     resetField('task')
   }
 
