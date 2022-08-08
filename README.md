@@ -17,7 +17,7 @@ yarn dev
 npm:
 ```
 npm install
-npm dev
+npm run dev
 ```
 
 ## How to build for production:
@@ -29,7 +29,7 @@ yarn build
 
 npm:
 ```
-npm build
+npm run build
 ```
 
 ## How preview locally production build
@@ -41,5 +41,5 @@ yarn preview
 
 npm:
 ```
-npm preview
+npm run preview
 ```
