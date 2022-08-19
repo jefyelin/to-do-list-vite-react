@@ -8,10 +8,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path='/' element={<TasksPage />} />
-        <Route path='/teste' element={<div>Teste</div>} />
-        <Route path='/teste2' element={<Redirect to='/teste3' />} />
-        <Route path='/teste3' element={<div>Teste3</div>} />
+        <Route path='/' element={<Redirect to='/tasks' />} />
+        <Route path='/tasks' element={<TasksPage />} />
       </Routes>
     </Router>
   )
